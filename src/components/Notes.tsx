@@ -1,7 +1,13 @@
 import React from 'react';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
+import {INote} from '../dataStructure';
 
-export const Notes = ({notes, onRemove}) => (
+type NotesProps = {
+  notes: INote[]
+  onRemove: (id: number, title: string) => void
+}
+
+export const Notes: React.FC<NotesProps> = ({notes, onRemove}) => (
   <TransitionGroup component="ul" className="list-group">
     {notes.map(note => (
       <CSSTransition

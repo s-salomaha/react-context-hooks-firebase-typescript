@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-export const Navbar = () => (
+export const Navbar: React.FC = () => (
   <nav className="navbar navbar-dark navbar-expand-lg bg-primary mb-5">
     <div className="container">
       <div className="navbar-brand">

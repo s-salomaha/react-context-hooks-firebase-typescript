@@ -2,12 +2,12 @@ import React, {useState, useContext} from 'react';
 import {AlertContext} from '../context/alert/alertContext';
 import {FirebaseContext} from '../context/firebase/firebaseContext';
 
-export const Form = () => {
+export const Form: React.FC = () => {
   const [value, setValue] = useState('');
   const alert = useContext(AlertContext);
   const firebase = useContext(FirebaseContext);
 
-  const submitHandler = event => {
+  const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     if (value.trim()) {
@@ -15,7 +15,7 @@ export const Form = () => {
         alert.show(`Заметка "${value.trim()}" была создана`, 'success');
       }).catch(() => {
         alert.show('Что-то пошло не так', 'danger');
-      })
+      });
       setValue('');
     } else {
       alert.show('Введите название заметки');

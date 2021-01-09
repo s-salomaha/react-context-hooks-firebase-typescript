@@ -8,7 +8,7 @@ export const Form: React.FC = () => {
   const firebase = useContext(FirebaseContext);
 
   const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
+    event.preventDefault();
 
     if (value.trim()) {
       firebase.addNote(value.trim()).then(() => {
@@ -20,7 +20,7 @@ export const Form: React.FC = () => {
     } else {
       alert.show('Введите название заметки');
     }
-  }
+  };
 
   return (
     <form onSubmit={submitHandler}>

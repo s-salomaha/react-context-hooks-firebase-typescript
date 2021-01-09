@@ -4,18 +4,18 @@ import {alertReducer} from './alertReducer'
 import {AlertKindType} from '../../dataStructure';
 
 export const AlertState: React.FC = ({children}) => {
-  const [state, dispatch] = useReducer(alertReducer, {visible: false})
+  const [state, dispatch] = useReducer(alertReducer, {visible: false});
 
-  const hide = () => dispatch({type: 'HIDE_ALERT'})
+  const hide = () => dispatch({type: 'HIDE_ALERT'});
 
   const show = (text: string, type: AlertKindType = 'warning') => {
     dispatch({
       type: 'SHOW_ALERT',
       payload: {text, type}
-    })
+    });
 
-    setTimeout(() => (hide()), 5000)
-  }
+    setTimeout(() => (hide()), 5000);
+  };
 
   return (
     <AlertContext.Provider value={{
@@ -24,5 +24,5 @@ export const AlertState: React.FC = ({children}) => {
     }}>
       {children}
     </AlertContext.Provider>
-  )
-}
+  );
+};

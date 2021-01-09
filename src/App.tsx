@@ -24,6 +24,6 @@ const App: React.FC = () => {
       </FirebaseState>
     </AlertState>
   );
-}
+};
 
 export default App;

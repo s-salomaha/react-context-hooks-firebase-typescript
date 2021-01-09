@@ -3,9 +3,9 @@ import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import {INote} from '../dataStructure';
 
 type NotesProps = {
-  notes: INote[]
+  notes: INote[],
   onRemove: (id: number, title: string) => void
-}
+};
 
 export const Notes: React.FC<NotesProps> = ({notes, onRemove}) => (
   <TransitionGroup component="ul" className="list-group">
